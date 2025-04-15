@@ -2,7 +2,7 @@
 
 A beautiful, responsive web application built with Flask that calculates Body Mass Index (BMI) and provides health insights based on the results.
 
-![BMI Calculator Main Screen](/api/placeholder/800/400 "BMI Calculator Main Interface")
+![main-dashboard](main-dashboard.png "main-dashboard")
 
 ## ✨ Features
 
@@ -16,13 +16,13 @@ A beautiful, responsive web application built with Flask that calculates Body Ma
 ## 📱 Screenshots
 
 ### Main Calculator
-![Calculator Interface](/api/placeholder/700/350 "BMI Calculator Form")
+![Calculator Interface](calculator-interface.png "BMI Calculator Form")
 
 ### Results Display
-![Results Screen](/api/placeholder/700/350 "BMI Results with Category")
+![Results Screen](results-screen.png "BMI Results with Category")
 
 ### Health Tips
-![Health Tips](/api/placeholder/700/350 "Personalized Health Recommendations")
+![Health Tips](health-tips.png "Personalized Health Recommendations")
 
 ## 🔧 Technologies Used
 
