@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+
+{% block title %}Health Tips - BMI Calculator{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h1 class="text-center mb-0"><i class="fas fa-heartbeat me-2"></i>Health Tips Based on BMI</h1>
+            </div>
+            <div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-lg-12">
+                        <div class="alert alert-info" role="alert">
+                            <i class="fas fa-lightbulb me-2"></i>
+                            <strong>Note:</strong> These tips are general guidelines and not a substitute for professional medical advice. Always consult with healthcare professionals before making significant changes to your diet or exercise routine.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tabs for different BMI categories -->
+                <ul class="nav nav-tabs nav-fill mb-4" id="bmiTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="underweight-tab" data-bs-toggle="tab" data-bs-target="#underweight" type="button">
+                            <i class="fas fa-weight me-1 text-primary"></i> Underweight
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="normal-tab" data-bs-toggle="tab" data-bs-target="#normal" type="button">
+                            <i class="fas fa-check-circle me-1 text-success"></i> Normal Weight
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="overweight-tab" data-bs-toggle="tab" data-bs-target="#overweight" type="button">
+                            <i class="fas fa-exclamation-circle me-1 text-warning"></i> Overweight
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="obese-tab" data-bs-toggle="tab" data-bs-target="#obese" type="button">
+                            <i class="fas fa-exclamation-triangle me-1 text-danger"></i> Obese
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="bmiTabContent">
+                    <!-- Underweight Tab -->
+                    <div class="tab-pane fade show active" id="underweight" role="tabpanel">
+                        <div class="card border-primary mb-4">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="mb-0"><i class="fas fa-utensils me-2"></i>Dietary Recommendations</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-primary mb-3">Foods to Include:</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Calorie-dense foods like nuts, seeds, and avocados</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Protein-rich foods like lean meats, eggs, and legumes</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Whole grain breads, pasta, and rice</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Healthy fats from olive oil, nut butters</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Smoothies with added protein powder</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-primary mb-3">Meal Pattern Tips:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><i class="fas fa-utensils text-primary me-2"></i>Eat more frequently (5-6 smaller meals per day)</li>
+                                            <li class="list-group-item"><i class="fas fa-utensils text-primary me-2"></i>Have nutritious snacks between meals</li>
+                                            <li class="list-group-item"><i class="fas fa-utensils text-primary me-2"></i>Drink beverages after meals, not before</li>
+                                            <li class="list-group-item"><i class="fas fa-utensils text-primary me-2"></i>Add extra calories to meals (nuts, cheese, etc.)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-primary">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="mb-0"><i class="fas fa-dumbbell me-2"></i>Exercise Recommendations</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-primary mb-3">Focus Areas:</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Strength training to build muscle mass</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Resistance exercises with weights</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Compound movements like squats and deadlifts</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Limited cardio (moderate intensity)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-primary mb-3">Important Notes:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Consult with a doctor before starting any exercise program</li>
+                                            <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Consider working with a personal trainer</li>
+                                            <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Focus on proper form over heavy weights</li>
+                                            <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Give your body adequate rest between workouts</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Normal Weight Tab -->
+                    <div class="tab-pane fade" id="normal" role="tabpanel">
+                        <div class="card border-success mb-4">
+                            <div class="card-header bg-success text-white">
+                                <h3 class="mb-0"><i class="fas fa-utensils me-2"></i>Dietary Recommendations</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-success mb-3">Maintain a Balanced Diet:</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Plenty of fruits and vegetables</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Whole grains and complex carbohydrates</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Lean proteins (fish, poultry, legumes)</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Healthy fats in moderation</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Limited processed foods and added sugars</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-success mb-3">Healthy Habits:</h5>
+                                        <ul class="list-group">
+                                            <li class="list
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Stay hydrated with 8-10 glasses of water daily</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Practice mindful eating</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Control portion sizes</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Eat regular meals without skipping</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-success">
+                            <div class="card-header bg-success text-white">
+                                <h3 class="mb-0"><i class="fas fa-dumbbell me-2"></i>Exercise Recommendations</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-success mb-3">Balanced Approach:</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>150 minutes of moderate cardio per week</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Strength training 2-3 times per week</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Flexibility exercises like yoga or stretching</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Regular physical activity throughout the day</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-success mb-3">Focus On:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><i class="fas fa-heart text-danger me-2"></i>Activities you enjoy to maintain consistency</li>
+                                            <li class="list-group-item"><i class="fas fa-heart text-danger me-2"></i>Mix of cardiovascular and strength exercises</li>
+                                            <li class="list-group-item"><i class="fas fa-heart text-danger me-2"></i>Building healthy habits for long-term health</li>
+                                            <li class="list-group-item"><i class="fas fa-heart text-danger me-2"></i>Including rest days for recovery</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Overweight Tab -->
+                    <div class="tab-pane fade" id="overweight" role="tabpanel">
+                        <div class="card border-warning mb-4">
+                            <div class="card-header bg-warning text-dark">
+                                <h3 class="mb-0"><i class="fas fa-utensils me-2"></i>Dietary Recommendations</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-warning mb-3">Dietary Adjustments:</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Create a moderate calorie deficit (250-500 calories)</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Increase protein intake to preserve muscle mass</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Focus on high-fiber foods for satiety</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Limit processed foods, added sugars, and refined carbs</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Control portion sizes with mindful eating</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-warning mb-3">Smart Strategies:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Use smaller plates to control portions</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Keep a food journal to track intake</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Drink water before meals to help with satiety</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Plan meals ahead to avoid impulsive choices</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Focus on sustainable changes, not crash diets</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-warning">
+                            <div class="card-header bg-warning text-dark">
+                                <h3 class="mb-0"><i class="fas fa-dumbbell me-2"></i>Exercise Recommendations</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-warning mb-3">Exercise Focus:</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Start with 30 minutes of moderate activity daily</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Gradually increase to 45-60 minutes</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Include both cardio and strength training</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Consider HIIT (High-Intensity Interval Training)</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Focus on consistency over intensity initially</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-warning mb-3">Practical Tips:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Find activities you enjoy to maintain motivation</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Start with walking and gradually increase intensity</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Track your progress with a fitness app</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Consider working with a fitness professional</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Build in active rest days for recovery</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Obese Tab -->
+                    <div class="tab-pane fade" id="obese" role="tabpanel">
+                        <div class="alert alert-danger mb-4" role="alert">
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                            <strong>Important:</strong> If your BMI is in the obese category, it's strongly recommended to consult with healthcare professionals before making significant lifestyle changes.
+                        </div>
+                        
+                        <div class="card border-danger mb-4">
+                            <div class="card-header bg-danger text-white">
+                                <h3 class="mb-0"><i class="fas fa-utensils me-2"></i>Dietary Recommendations</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-danger mb-3">Dietary Approach:</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Work with a nutritionist or dietitian</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Focus on gradual, sustainable weight loss</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Aim for controlled calorie deficit (500-1000 calories)</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Prioritize nutrient-dense, whole foods</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Avoid extreme diets or rapid weight loss approaches</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-danger mb-3">Key Strategies:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Regular meal timing to prevent extreme hunger</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Keep a detailed food journal</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Identify and manage emotional eating triggers</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Develop a support system for accountability</li>
+                                            <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Celebrate non-scale victories and progress</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger text-white">
+                                <h3 class="mb-0"><i class="fas fa-dumbbell me-2"></i>Exercise Recommendations</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="text-danger mb-3">Starting Point:</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Begin with low-impact activities (walking, swimming)</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Start with 10-15 minutes and gradually increase</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Focus on consistency over intensity</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Include strength training with professional guidance</li>
+                                            <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Consider water-based exercises for joint protection</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-danger mb-3">Medical Considerations:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><i class="fas fa-heartbeat text-danger me-2"></i>Get medical clearance before starting exercise</li>
+                                            <li class="list-group-item"><i class="fas fa-heartbeat text-danger me-2"></i>Consider working with a physical therapist</li>
+                                            <li class="list-group-item"><i class="fas fa-heartbeat text-danger me-2"></i>Monitor heart rate and breathing during exercise</li>
+                                            <li class="list-group-item"><i class="fas fa-heartbeat text-danger me-2"></i>Be aware of joint stress and pain</li>
+                                            <li class="list-group-item"><i class="fas fa-heartbeat text-danger me-2"></i>Consider medical weight management programs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-5">
+                    <h3 class="text-primary mb-4">General Wellness Tips for Everyone</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 border-info">
+                                <div class="card-header bg-info text-white">
+                                    <h5 class="mb-0"><i class="fas fa-brain me-2"></i>Mental Health</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Practice stress management techniques</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Prioritize quality sleep (7-9 hours)</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Maintain social connections</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Consider mindfulness or meditation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 border-info">
+                                <div class="card-header bg-info text-white">
+                                    <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>Track Progress</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Keep a journal of your goals</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Take measurements beyond weight</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Track energy levels and mood</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Celebrate non-scale victories</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 border-info">
+                                <div class="card-header bg-info text-white">
+                                    <h5 class="mb-0"><i class="fas fa-users me-2"></i>Support System</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Build a supportive community</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Consider a health coach</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Join group fitness classes</li>
+                                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Share goals with friends and family</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-light">
+                <p class="text-muted mb-0 text-center">
+                    <small><i class="fas fa-info-circle me-1"></i>These recommendations are general guidelines. Individual needs may vary. Always consult with healthcare professionals for personalized advice.</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
